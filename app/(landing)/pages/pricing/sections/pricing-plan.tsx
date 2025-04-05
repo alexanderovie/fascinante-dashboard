@@ -19,35 +19,35 @@ import { twMerge } from "tailwind-merge";
 const BENEFITS: PricingCardBenefit[] = [
   {
     icon: HiCreditCard,
-    title: "Everything you need to manage payments",
+    title: "Digital Tools To Grow Your Business",
   },
   {
     icon: HiEmojiHappy,
-    title: "No setup fees, monthly fees, or hidden fees",
+    title: "No Hidden Fees Ever",
   },
   {
     icon: HiShieldCheck,
-    title: "Comprehensive & rigorous compliance",
+    title: "Compliance With Best Practices",
   },
   {
     icon: HiPaperAirplane,
-    title: "Get hundreds of feature updates each year",
+    title: "Free Visibility Audit Included",
   },
   {
     icon: HiFire,
-    title: "Predictable payouts to your bank accounts",
+    title: "Automated Marketing Tools",
   },
   {
     icon: HiPresentationChartBar,
-    title: "Financial reconciliation and reporting",
+    title: "Monthly Performance Reports",
   },
   {
     icon: HiChat,
-    title: "24×7 phone, chat, and email support",
+    title: "Priority Support Available",
   },
   {
     icon: HiCube,
-    title: "Robust developer platform and third-party integrations",
+    title: "Advanced Integrations Supported",
   },
 ];
 
@@ -57,11 +57,12 @@ export function PricingPlan() {
   return (
     <>
       <h1 className="mb-3 text-3xl font-bold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight dark:text-white">
-        Our pricing plan made simple
+        Plans For Local Businesses
       </h1>
       <p className="mb-6 text-lg font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-        All types of businesses need access to development resources, so we give
-        you the option to decide how much you need to use.
+        Fascinante Digital helps businesses improve their visibility, automate
+        marketing, and convert more clients — choose the right plan for your
+        growth.
       </p>
       <div className="flex items-center">
         <span
@@ -96,46 +97,46 @@ export function PricingPlan() {
       </div>
       <section className="grid grid-cols-1 space-y-12 pt-9 lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
         <PricingCard
-          title="Freelancer"
+          title="Starter Plan"
           price={{
             type: isYearly ? "yearly" : "monthly",
             monthly: 49,
-            yearly: 49 * 10,
+            yearly: 49 * 12,
             currency: "$",
           }}
-          description="Great for personal use and for your side projects."
+          description="Ideal for local businesses starting out. No website included."
           benefits={BENEFITS.map((benefit, index) => ({
             ...benefit,
             ...(index > 1 && { disabled: true }),
           }))}
-          href="#freelancer"
+          href="#starter"
         />
         <PricingCard
-          title="Company"
+          title="Professional Plan"
           price={{
             type: isYearly ? "yearly" : "monthly",
-            monthly: 299,
-            yearly: 299 * 10,
+            monthly: 99,
+            yearly: 99 * 12,
             currency: "$",
           }}
-          description="Great for personal use and for your side projects."
+          description="Includes a high-converting one-page website and a free audit."
           benefits={BENEFITS.map((benefit, index) => ({
             ...benefit,
             ...(index > 3 && { disabled: true }),
           }))}
-          href="#company"
+          href="#professional"
         />
         <PricingCard
-          title="Enterprise"
+          title="Growth Plan"
           price={{
             type: isYearly ? "yearly" : "monthly",
-            monthly: 2999,
-            yearly: 2999 * 10,
+            monthly: 200,
+            yearly: 200 * 12,
             currency: "$",
           }}
-          description="Great for personal use and for your side projects."
+          description="Website plus marketing automation. Everything included."
           benefits={BENEFITS}
-          href="#enterprise"
+          href="#growth"
         />
       </section>
     </>
@@ -193,7 +194,7 @@ function PricingCard({
         href={href}
         className="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
       >
-        Choose plan
+        Choose Plan
       </a>
     </div>
   );
